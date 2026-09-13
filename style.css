@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 20px;
+  background: #f4f4f9;
+  color: #333;
+}
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+h1 {
+  font-size: 2em;
+  padding: 10px;
+  color: orangered;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+}
+a {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
+}
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+button,
+input,
+select {
+  padding: 8px;
+  margin: 4px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}
+.danger {
+  background: #dc3545;
+}
+.danger:hover {
+  background: #bd2130;
+}
+
+#carousel {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+#carouselContent {
+  text-align: center;
+  flex: 1;
+}
+#carouselContent img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+.prod-item,
+.cart-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.prod-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.cart-item {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Restaurante - Sistema de Pedidos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header><h1>RestauranteHPE</h1></header>
+       <main>
+       <nav>
+              <a href="cadastro.html">Gerenciar Cardápio</a>
+       </nav>
+     
+      <section class="card">
+        <h2>Destaques</h2>
+        <div id="carousel">
+          <button id="prevBtn" aria-label="Anterior">&lt;</button>
+          <div id="carouselContent"></div>
+          <button id="nextBtn" aria-label="Próximo">&gt;</button>
+        </div>
+      </section>
+
+    
+        <h3>Cardápio</h3>
+        <div id="listaProdutos" class="grid"></div>
+      </section>
+
+  
+      <section class="card">
+        <h2>Carrinho de Compras</h2>
+        <div id="itensCarrinho"></div>
+
+        <div class="carrinho-opcoes">
+          <label>
+            Tipo de Entrega:
+            <select id="tipoEntrega">
+              <option value="retirada">
+                Retirada / Consumo Local (Sem taxa)
+              </option>
+              <option value="delivery">Delivery (+ R$ 2,50)</option>
+            </select>
+          </label>
+          <p><strong>Subtotal:</strong> R$ <span id="subtotal">0.00</span></p>
+          <p><strong>Taxa:</strong> R$ <span id="taxa">0.00</span></p>
+          <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+          <button id="btnLimparCarrinho">Limpar Carrinho</button>
+        </div>
+
+        <hr />
+
+        <h3>Finalizar Pedido</h3>
+        <form id="formPedido">
+          <input
+            type="text"
+            id="nomeCliente"
+            placeholder="Nome do Cliente"
+            required
+          />
+          <button type="submit">Confirmar e Finalizar Pedido</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
