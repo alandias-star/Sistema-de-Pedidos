@@ -34,7 +34,7 @@
 
 ### 5. Padrões de IHC (Interação Humano-Computador) e Arquitetura Visual
 
-- **Header & Navbar Moderno**: Barra fixa com identidade de marca (`RestauranteHPE`) e botão de ação para alternar entre a loja e o gerenciador.
+- **Header e Navbar Moderno**: Barra fixa com identidade de marca (`RestauranteHPE`) e botão de ação para alternar entre a loja e o gerenciador.
 - **Sistema de Design (Paleta de Cores)**: Uso de variáveis CSS (`:root`) para padronizar cores, contrastes e sombras.
 - **Feedback Visual**: Mensagens informativas (`alert`) para adição, alteração e confirmação de pedidos.
 - **Prevenção de Erros**: Confirmações explícitas (`confirm`) antes de excluir produtos ou limpar o carrinho.
