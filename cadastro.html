@@ -2,19 +2,29 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Restaurante - Sistema de Pedidos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante - Gerenciar Cardápio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-   <body>
-    <header><h1>RestauranteHPE</h1></header>
+  <body>
+    <header class="main-header">
+      <div class="header-container">
+        <div class="brand">
+          <span class="brand-icon">🍽️</span>
+          <h1 class="brand-title">Restaurante<span>HPE</span></h1>
+        </div>
+
+        <nav class="main-nav">
+          <a href="index.html" class="nav-btn nav-btn-outline">
+            <span class="icon">&larr;</span> Voltar para a Loja
+          </a>
+        </nav>
+      </div>
+    </header>
 
     <main>
-        <nav>
-    <a href="index.html">&larr; Voltar para a Loja</a>
-  </nav>
-          
       <section class="card">
-        <h2>Gerenciar Cardápio </h2>
+        <h2>Gerenciar Cardápio</h2>
         <form id="formProduto">
           <input type="hidden" id="prodId" />
           <input type="text" id="prodNome" placeholder="Nome" required />
@@ -27,16 +37,25 @@
             required
           />
           <input type="text" id="prodCat" placeholder="Categoria" required />
-         <input type="text" id="prodImg" placeholder="Caminho da Imagem" required />
+          <input
+            type="text"
+            id="prodImg"
+            placeholder="Caminho/URL da Imagem"
+            required
+          />
           <button type="submit" id="btnSalvarProd">Salvar Produto</button>
-          <button type="button" id="btnCancelarEdit" style="display: none">
+          <button
+            type="button"
+            id="btnCancelarEdit"
+            class="danger"
+            style="display: none"
+          >
             Cancelar
           </button>
         </form>
-
-        
+      </section>
     </main>
 
     <script src="script.js"></script>
   </body>
-  </html>
+</html>

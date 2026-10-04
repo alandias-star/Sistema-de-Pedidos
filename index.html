@@ -2,16 +2,26 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurante - Sistema de Pedidos</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header><h1>RestauranteHPE</h1></header>
-       <main>
-       <nav>
-              <a href="cadastro.html">Gerenciar Cardápio</a>
-       </nav>
-     
+    <header class="main-header">
+      <div class="header-container">
+        <div class="brand">
+          <span class="brand-icon">🍽️</span>
+          <h1 class="brand-title">Restaurante<span>HPE</span></h1>
+        </div>
+
+        <nav class="main-nav">
+          <a href="cadastro.html" class="nav-btn">
+            <span class="icon">⚙️</span> Gerenciar Cardápio
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main>
       <section class="card">
         <h2>Destaques</h2>
         <div id="carousel">
@@ -21,12 +31,11 @@
         </div>
       </section>
 
-    
+      <section class="card">
         <h3>Cardápio</h3>
         <div id="listaProdutos" class="grid"></div>
       </section>
 
-  
       <section class="card">
         <h2>Carrinho de Compras</h2>
         <div id="itensCarrinho"></div>
@@ -44,7 +53,7 @@
           <p><strong>Subtotal:</strong> R$ <span id="subtotal">0.00</span></p>
           <p><strong>Taxa:</strong> R$ <span id="taxa">0.00</span></p>
           <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
-          <button id="btnLimparCarrinho">Limpar Carrinho</button>
+          <button id="btnLimparCarrinho" class="danger">Limpar Carrinho</button>
         </div>
 
         <hr />

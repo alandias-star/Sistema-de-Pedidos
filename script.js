@@ -1,3 +1,6 @@
+/* ==========================================================================
+   POO (CLASSES E REGRAS DE NEGÓCIO)
+   ========================================================================== */
 class Produto {
   constructor(id, nome, descricao, preco, categoria, imagem) {
     this.id = id;
@@ -62,6 +65,9 @@ class Pedido {
   }
 }
 
+/* ==========================================================================
+   GERENCIADOR / REPOSITÓRIO (CRUD & LOCALSTORAGE BÔNUS)
+   ========================================================================== */
 class Gerenciador {
   constructor() {
     this.produtos = JSON.parse(localStorage.getItem("produtos")) || [
@@ -118,6 +124,9 @@ class Gerenciador {
 const app = new Gerenciador();
 let carrosselIndex = 0;
 
+/* ==========================================================================
+   RENDERIZAÇÃO DO DOM (CARROSSEL, CARDÁPIO E CARRINHO)
+   ========================================================================== */
 function renderCarrossel() {
   const container = document.getElementById("carouselContent");
   if (!container) return;
@@ -190,6 +199,9 @@ function renderCarrinho() {
   if (totalEl) totalEl.innerText = app.carrinho.getTotal().toFixed(2);
 }
 
+/* ==========================================================================
+   MANIPULADORES DE EVENTOS E AÇÕES DO USUÁRIO
+   ========================================================================== */
 function adicionarAoCarrinho(id) {
   const prod = app.produtos.find((p) => p.id === id);
   if (prod) {
@@ -245,6 +257,9 @@ function deletarProduto(id) {
   renderCarrinho();
 }
 
+/* ==========================================================================
+   INICIALIZAÇÃO E OUVINTES DE FORMULÁRIO / NAVEGAÇÃO
+   ========================================================================== */
 const formProduto = document.getElementById("formProduto");
 if (formProduto) {
   formProduto.addEventListener("submit", (e) => {

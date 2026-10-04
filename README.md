@@ -1,36 +1,48 @@
 ### 1. Programação Orientada a Objetos (POO)
 
-- **`Produto`**: Representa os itens do cardápio (`id`, `nome`, `descricao`, `preco`, `categoria`, `imagem`).
-- **`ItemCarrinho`**: Associa um `Produto` a uma quantidade e calcula subtotal.
-- **`Carrinho`**: Agrupa os itens, calcula subtotal, soma a taxa de entrega e calcula o valor total.
-- **`Pedido`**: Armazena o pedido finalizado (`cliente`, `itens`, `tipoEntrega`, `total`, `data`, `status`).
-- **`Gerenciador`**: Controla o repositório de produtos/pedidos e executa as operações do CRUD.
+- **`Produto`**: Representa a entidade do item do cardápio (`id`, `nome`, `descricao`, `preco`, `categoria`, `imagem`).
+- **`ItemCarrinho`**: Associa um `Produto` a uma quantidade e calcula o subtotal individual.
+- **`Carrinho`**: Agrupa os itens, calcula o subtotal, aplica a taxa de entrega e calcula o valor total.
+- **`Pedido`**: Encapsula os dados do pedido finalizado (`cliente`, `itens`, `tipoEntrega`, `total`, `data`, `status`).
+- **`Gerenciador`**: Atua como repositório central, controlando as operações de CRUD do cardápio e o armazenamento de pedidos.
 
-### 2. Cobertura dos 4 CRUDs
+---
 
-- **Create**: Cadastrar novos produtos no cardápio e adicionar produtos ao carrinho.
-- **Read**: Listar produtos no cardápio e visualizar os itens dentro do carrinho.
-- **Update**: Editar dados de um produto existente (via formulário dedicado) e alterar a quantidade (+/-) de um item no carrinho.
-- **Delete**: Excluir produtos do cardápio e remover itens do carrinho.
+### 2. Operações CRUD Completas
+
+- **Create**: Cadastrar novos produtos via formulário (`cadastro.html`) e adicionar produtos ao carrinho.
+- **Read**: Listar produtos do cardápio e visualizar os itens dentro do carrinho em tempo real.
+- **Update**: Editar dados de um produto existente (redirecionando ao formulário) e alterar as quantidades (+/-) no carrinho.
+- **Delete**: Excluir produtos do cardápio e remover/limpar itens do carrinho.
+
+---
 
 ### 3. Carrossel de Pratos
 
-- Carrossel interativo na página inicial (`index.html`) com navegação por botões (setas).
-- Exibe imagem, nome e preço de cada prato cadastrado.
+- Slider de destaques interativo na página inicial (`index.html`) com navegação por botões (setas).
+- Exibe imagem, nome, preço e permite a adição direta do prato ao carrinho.
+
+---
 
 ### 4. Regras do Carrinho e Taxa de Entrega
 
-- Atualização automática dos valores ao alterar itens ou quantidade.
-- Aplicação dinâmica de taxa de **R$ 2,50** ao selecionar a opção **Delivery**.
-- Isenção de taxa para opções de **Retirada / Consumo Local**.
+- Atualização automática dos valores do carrinho a cada alteração de itens ou quantidade.
+- Aplicação dinâmica da taxa de **R$ 2,50** na escolha da opção **Delivery** e isenção na opção **Retirada / Consumo Local**.
+- Finalização de pedido com geração do comprovante/objeto `Pedido` com os dados do cliente.
 
-### 5. Padrões de IHC (Interação Humano-Computador)
+---
 
-- **Feedback ao usuário**: Mensagens informativas (`alert`) ao adicionar itens, editar ou finalizar pedidos.
-- **Prevenção de erros**: Confirmação visual (`confirm`) para remoções de itens e limpeza do carrinho.
-- **Consistência e Affordance**: Estilização padronizada para botões, campos de entrada, ações destrutivas (botões vermelhos) e navegação limpa entre telas (`index.html` e `cadastro.html`).
-- **Visibilidade do estado**: Exibição clara do subtotal, taxa aplicada e total calculado em tempo real.
+### 5. Padrões de IHC (Interação Humano-Computador) e Arquitetura Visual
+
+- **Header & Navbar Moderno**: Barra fixa com identidade de marca (`RestauranteHPE`) e botão de ação para alternar entre a loja e o gerenciador.
+- **Sistema de Design (Paleta de Cores)**: Uso de variáveis CSS (`:root`) para padronizar cores, contrastes e sombras.
+- **Feedback Visual**: Mensagens informativas (`alert`) para adição, alteração e confirmação de pedidos.
+- **Prevenção de Erros**: Confirmações explícitas (`confirm`) antes de excluir produtos ou limpar o carrinho.
+- **Affordance e Visibilidade**: Botões bem delimitados com efeitos de _hover_, identificadores visuais de ações destrutivas (botões vermelhos) e atualização do subtotal/total em tempo real.
+- **Responsividade**: Layout adaptável para dispositivos móveis via CSS Grid dinâmico e Media Queries.
+
+---
 
 ### 6. Bônus — Persistência de Dados
 
-- Implementação do **`localStorage`** na classe `Gerenciador` para garantir a manutenção dos produtos cadastrados e pedidos finalizados mesmo após recarregar a página.
+- Implementação de **`localStorage`** na classe `Gerenciador` para garantir a manutenção dos produtos cadastrados e pedidos finalizados mesmo após recarregar ou fechar a página.
